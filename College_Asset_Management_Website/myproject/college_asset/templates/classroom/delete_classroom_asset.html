@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Confirm Delete Classroom Asset</h2>
+    <p>Are you sure you want to delete "{{ classroom_asset.asset.asset_name }}" from "{{ classroom_asset.classroom.classroom_name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'classroom_list' %}">Cancel</a>
+    </form>
+{% endblock %}

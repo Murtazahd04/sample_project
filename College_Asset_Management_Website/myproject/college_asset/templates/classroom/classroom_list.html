@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Classroom Management</h2>
+
+    <a href="{% url 'college_asset:register_asset' %}">Register Asset</a> |
+    <a href="{% url 'college_asset:add_classroom' %}">Add Classroom</a> |
+    <a href="{% url 'college_asset:assign_asset' %}">Assign Asset</a> |
+    <a href="{% url 'college_asset:classroom_report' %}">Classroom Report</a>
+    <a href="{% url 'college_asset:asset_pie_chart' %}" class="btn btn-primary">Generate Asset Pie Chart</a>
+
+    <h3>Classrooms</h3>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Classroom No</th>
+                <th>Classroom Name</th>
+                <th>Division</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for classroom in classrooms %}
+                <tr>
+                    <td>{{ classroom.classroom_no }}</td>
+                    <td>{{ classroom.classroom_name }}</td>
+                    <td>{{ classroom.division }}</td>
+                    <td>
+                        <a href="{% url 'college_asset:edit_classroom' classroom.classroom_id %}">Edit</a> |
+                        <a href="{% url 'college_asset:delete_classroom' classroom.classroom_id %}">Delete</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No classrooms found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Registered Assets</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Asset Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asset in registered_assets %}
+                <tr>
+                    <td>{{ asset.asset_name }}</td>
+                    <td>
+                        <a href="{% url 'college_asset:edit_asset' asset.asset_id %}">Edit</a> |
+                        <a href="{% url 'college_asset:delete_asset' asset.asset_id %}">Delete</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2">No assets found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Assigned Assets</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Classroom No.</th>
+                <th>Classroom</th>
+                <th>Asset</th>
+                <th>Quantity</th>
+                <th>Inactive Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for classroom_asset in classroom_assets %}
+                <tr>
+                    <td>{{ classroom_asset.classroom.classroom_no }}</td>
+                    <td>{{ classroom_asset.classroom.classroom_name }}</td>
+                    <td>{{ classroom_asset.asset.asset_name }}</td>
+                    <td>{{ classroom_asset.quantity }}</td>
+                    <td>{{ classroom_asset.inactive_quantity }}</td>
+                    <td>
+                        <a href="{% url 'college_asset:edit_classroom_asset' classroom_asset.classroom_asset_id %}">Edit</a> |
+                        <a href="{% url 'college_asset:delete_classroom_asset' classroom_asset.classroom_asset_id %}">Delete</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6">No assigned assets found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 3rem;
+}
+
+nav {
+    padding: 1rem;
+    background-color: #44B78B;
+    color: white;
+    font-size: 2.5rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+h1,
+h2 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #81dbb8;
+}
+
+a:hover {
+    opacity: 0.85;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    text-align: left;
+    color: black; /* Ensure text is visible */
+    background-color: white; /* Add a white background for contrast */
+}
+
+th,
+td {
+    border: 1px solid #ddd; /* Makes table borders visible */
+    padding: 0.5rem;
+}
+
+th {
+    background-color: #44B78B; /* Header background color */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row background color */
+}
+
+tr:hover {
+    background-color: #ddd; /* Highlight row on hover */
+}
+
+td {
+    background-color: #e8f5e9; /* Column background color */
+    color: black;
+}
+
+form {
+    max-width: 800px; /* Increase the width of the form */
+    margin: 2rem auto; /* Center the form on the page */
+    padding: 2rem; /* Increase padding for better spacing */
+    background-color: #f9f9f9; /* Light background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow for emphasis */
+    color: #333; /* Ensure text inside the form is dark and visible */
+}
+
+/* Input fields styling */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+    width: 100%; /* Full width for inputs */
+    padding: 0.8rem; /* Increase padding for larger input fields */
+    margin-bottom: 1.5rem; /* Add more spacing between fields */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1.5rem; /* Increase font size for better readability */
+    height: auto; /* Allow height to adjust based on padding */
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color for visibility */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Input focus styling */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #44B78B; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 8px rgba(68, 183, 139, 0.5); /* Add subtle glow */
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin-bottom: 0.8rem; /* Add more spacing below labels */
+    font-weight: bold;
+    font-size: 2.0rem; /* Increase label font size */
+    color: #333; /* Ensure label text is dark and visible */
+}
+
+.logout {
+    display: inline-block;
+}
+
+.logout-button {
+    font-size: 1.5rem; /* Adjust font size */
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    color: white; /* Ensure it contrasts with the navbar background */
+    cursor: pointer; /* Pointer cursor */
+    padding: 0.5rem 1rem; /* Add some padding */
+    display: inline-block; /* Ensure it stays inline */
+}
+
+.logout-button:hover {
+    opacity: 0.85; /* Slight hover effect */
+}
+
+/* General button styling */
+button {
+    display: inline-block;
+    padding: 1rem 2rem; /* Increase button size */
+    font-size: 1.2rem; /* Larger font size for buttons */
+    font-weight: bold;
+    color: white;
+    background-color: #44B78B; /* Primary button color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #36996e; /* Darker shade on hover */
+}
+
+.form-with-validation {
+    font-size: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+.form-with-validation div {
+    display: flex;
+    flex-flow: column;
+    gap: 0.5rem;
+}
+
+.form-with-validation input {
+    padding: 0.25rem;
+    max-width: 300px;
+}
+
+.form-submit {
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: 125px;
+}
